@@ -7,4 +7,6 @@ class UserForm(forms.Form):
         "max_length": "Please enter a shorter name",
     })
     department = forms.CharField(label="Department")
-    semester = forms.IntegerField(label="Semester", min_value=1, max_value=8)
+    semester = forms.IntegerField(label="Semester", min_value=1, max_value=8, error_messages={
+        "required": "Please enter your semester!",
+        "max_length": "Should be between 1-8", })
